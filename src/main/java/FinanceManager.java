@@ -116,14 +116,12 @@ public class FinanceManager implements Serializable {
 
         Wallet wallet = currentUser .getWallet();
 
-        // Вывод общей информации
         double totalIncome = wallet.getTotalIncome();
         double totalExpenses = wallet.getTotalExpenses();
 
         System.out.println("Общий доход: " + totalIncome);
         System.out.println("Общие расходы: " + totalExpenses);
 
-        // Вывод информации по категориям
         for (Map.Entry<String, Double> entry : wallet.getBudgets().entrySet()) {
             String cat = entry.getKey();
             double budget = entry.getValue();
@@ -181,7 +179,7 @@ public class FinanceManager implements Serializable {
         File file = new File("data.dat");
         if (!file.exists()) {
             System.out.println("Файл данных не найден. Будет создан новый файл при сохранении.");
-            return; // Выход из метода, если файл не найден
+            return;
         }
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {

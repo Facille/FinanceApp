@@ -13,6 +13,6 @@ public class InputValidator {
     }
 
     public static boolean isValidPassword(String password) {
-        return password != null && password.length() >= 6; // Минимальная длина пароля
+        return password != null && password.length() >= 6;
     }
 }
