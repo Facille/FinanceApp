@@ -136,7 +136,7 @@ public class FinanceManager implements Serializable {
             }
         }
 
-        // Если указана категория, выводим информацию только по ней
+        
         if (category != null && !category.isEmpty()) {
             double categoryIncome = wallet.getTransactions().stream()
                     .filter(t -> t.getCategory().equals(category) && t.getType() == TransactionType.INCOME)
